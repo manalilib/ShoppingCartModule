@@ -12,7 +12,7 @@ public class Cart {
     ArrayList<Promotions> promos;
     String currentPromoCode = "I<3AMAYSIM";
     boolean isPromoCode; //promo flag
-    double deduction;
+    double discount;
 
     public Cart(HashMap<String, Product> products, ArrayList<Promotions> promos) {
         this.products = products;
@@ -40,23 +40,24 @@ public class Cart {
         if (freebies == null) validatePromo();
 
         double total = addedProducts.stream().mapToDouble(product -> product.price).sum();
-
         System.out.println("Price: " + total);
-
-        double totalResult = total - deduction;
-
-        if (this.isPromoCode) return totalResult - (totalResult * .10); else return totalResult;
+        double totalResult = total - discount;
+        if (this.isPromoCode) {
+            discount = .10;
+            System.out.println("Promocode: " + currentPromoCode + "\nless : " + discount);
+            return totalResult - (totalResult * discount);
+        } else return totalResult;
     }
 
     private void validatePromo() {
-        deduction = 0;
+        discount = 0;
         freebies = new ArrayList<Product>();
         for (int i = 0; i < promos.size(); i++) {
             PromoFreebies promoFreebies = promos.get(i).getPromoResult(addedProducts);
-            deduction += promoFreebies.totalDeduction;
+            discount += promoFreebies.totalDeduction;
             freebies.addAll(promoFreebies.totalFreebies);
         }
-        System.out.println("freebies:"  + freebies.size()+ "\n" +"discount: " + deduction);
+        System.out.println("freebies:"  + freebies.size()+ "\n" +"discount: " + discount);
     }
 
     public ArrayList<Product> items() {
