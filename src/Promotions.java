@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Created by manalilib on 1/9/17.
@@ -6,22 +7,39 @@ import java.util.ArrayList;
 
 public class Promotions {
 
-    Product targetProduct;
-
-    ArrayList<Product> freeProducts;
+    ArrayList<Product> freebies;
     double discount;
-
+    Product product;
     boolean isMod;
-    int quantityQualifier;
+    int promoQty;
 
 
-    public Promotions(Product targetProduct, ArrayList<Product> freeProducts,
-                           double discount, int quantityQualifier, boolean isMod) {
-        this.targetProduct = targetProduct;
-        this.freeProducts = freeProducts;
+    public Promotions(Product product, ArrayList<Product> freebies,
+                           double discount, int promoQty, boolean isMod) {
+        this.product = product;
+        this.freebies = freebies;
         this.discount = discount;
-        this.quantityQualifier = quantityQualifier;
+        this.promoQty = promoQty;
         this.isMod = isMod;
     }
 
+    public PromoFreebies getPromoResult(ArrayList<Product> addedProducts) {
+        double totalDeduction = 0;
+        ArrayList<Product> totalFreebies = new ArrayList<Product>();
+        int targetProductSize = addedProducts.stream().filter(p -> p.code == product.code).collect(Collectors.toList()).size();
+        if (isMod) {
+            int multiplier = targetProductSize / promoQty;
+            for (int i = 0; i < multiplier; i++) {
+                totalDeduction = (discount * product.price) * targetProductSize;
+                totalFreebies.addAll(freebies);
+            }
+            return new PromoFreebies(totalFreebies, totalDeduction);
+        } else {
+            if (targetProductSize >= promoQty) {
+                totalDeduction = (discount * product.price) * targetProductSize;
+                totalFreebies.addAll(freebies);
+            }
+        }
+        return new PromoFreebies(totalFreebies, totalDeduction);
+    }
 }
