@@ -1,7 +1,6 @@
 /**
  * Created by manalilib on 1/9/17.
  */
-import java.io.Console;
 import java.util.*;
 
 public class ShoppingCart {
