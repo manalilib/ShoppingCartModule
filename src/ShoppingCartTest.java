@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import static groovy.util.GroovyTestCase.*;
 
@@ -12,10 +13,10 @@ import static groovy.util.GroovyTestCase.*;
  * Created by manalilib on 1/16/17.
  */
 public class ShoppingCartTest {
-//    @Before
+
+    String expectedPrice = "";
+
     public void loadMocks(int scenario) throws Exception {
-        System.out.println("Running Shopping Cart Module Test..");
-//        @org.junit.runners.Parameterized.Parameters
         HashMap<String, Product> products = new HashMap<String, Product>();
         products.put("ult_small", new Product("ult_small", "Unlimited 1GB", 24.90));
         products.put("ult_medium", new Product("ult_medium", "Unlimited 2GB", 29.90));
@@ -61,21 +62,35 @@ public class ShoppingCartTest {
             case 2:
                 testPromoLargeScenario(cart);
                 break;
+            case 3:
+                testPromoMediumScenario(cart);
+                break;
+            case 4:
+                testPromoCodeScenario(cart);
+                break;
             default:
                 System.out.println("Invalid");
-
         }
-
     }
 
     @Test
-    public void testScenarioSmall() throws Exception {
+    public void testSmallGBPromo() throws Exception {
         loadMocks(1);
     }
 
     @Test
-    public void testScenarioLarge() throws Exception {
+    public void testLargeGBPromo() throws Exception {
         loadMocks(2);
+    }
+
+    @Test
+    public void testMediumGBPromo() throws Exception {
+        loadMocks(3);
+    }
+
+    @Test
+    public void testWithPromoCode() throws Exception {
+        loadMocks(4);
     }
 
     //Promo scenario methods
@@ -89,7 +104,7 @@ public class ShoppingCartTest {
             cart.add("ult_large");
             double total = cart.total();
             String roundedTotal = String.format("%.2f",total);
-            String expectedPrice = "94.70";
+            expectedPrice = "94.70";
         System.out.println("Discounted Price: $" + roundedTotal);
             assertEquals(expectedPrice,roundedTotal);
     }
@@ -105,8 +120,39 @@ public class ShoppingCartTest {
         cart.add("ult_large");
         double total = cart.total();
         String roundedTotal = String.format("%.2f",total);
-        String expectedPrice = "209.40";
+        expectedPrice = "209.40";
+        System.out.println("Discounted Price: $" + roundedTotal);
+//        printPoducts(cart);
+        assertEquals(expectedPrice,roundedTotal);
+    }
+
+    //3rd scenario: expected Price: $84.70 , 1 x Unlimited 1 GB + 2 X Unlimited 2 GB + 2 X 1 GB Data-pack
+    public void testPromoMediumScenario(Cart cart){
+        System.out.println("Running testPromoMediumScenario test..\nexpected Price: $84.70 , 1 x Unlimited 1 GB + 2 X Unlimited 2 GB + 2 X 1 GB Data-pack\n");
+        cart.add("ult_small");
+        cart.add("ult_medium");
+        cart.add("ult_medium");
+        double total = cart.total();
+        String roundedTotal = String.format("%.2f",total);
+        expectedPrice = "84.70";
         System.out.println("Discounted Price: $" + roundedTotal);
         assertEquals(expectedPrice,roundedTotal);
     }
+
+
+    //3rd scenario: expected Price: $31.32 1 x Unlimited 1 GB , 1 x 1 GB Data-pack
+    public void testPromoCodeScenario(Cart cart){
+        System.out.println("Running testPromoMediumScenario test..\nexpected Price: $84.70 , 1 x Unlimited 1 GB + 2 X Unlimited 2 GB + 2 X 1 GB Data-pack\n");
+        cart.add("ult_small");
+        cart.add("1gb", "I<3AMAYSIM");
+        double total = cart.total();
+        String roundedTotal = String.format("%.2f",total);
+        expectedPrice = "31.32";
+        System.out.println("Discounted Price: $" + roundedTotal);
+        assertEquals(expectedPrice,roundedTotal);
+    }
+//
+//    public void printPoducts(Cart cart){
+//        cart.items().forEach(prod -> System.out.println("item: " + Collections.frequency(cart.items(),prod.name)));
+//    }
 }
