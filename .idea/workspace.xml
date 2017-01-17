@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dddf47ca-e089-4f1f-98a9-97b74ad7c019" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/EngineeringTest/Cart.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/EngineeringTest/ShoppingCart.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/EngineeringTest/ShoppingCartTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EngineeringTest.iml" afterPath="$PROJECT_DIR$/EngineeringTest.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShoppingCartTest.java" afterPath="$PROJECT_DIR$/src/ShoppingCartTest.java" />
     </list>
     <ignored path="EngineeringTest.iws" />
@@ -45,13 +40,13 @@
       <file leaf-file-name="ShoppingCartTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ShoppingCartTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="69" column="127" selection-start-line="69" selection-start-column="127" selection-end-line="69" selection-end-column="127" />
+            <state relative-caret-position="117">
+              <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#520#537#0" expanded="true" />
-                <element signature="e#923#935#0" expanded="true" />
-                <element signature="e#1680#1689#0" expanded="true" />
+                <element signature="e#536#553#0" expanded="true" />
+                <element signature="e#939#951#0" expanded="true" />
+                <element signature="e#1696#1705#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -949,13 +944,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ShoppingCartTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="69" column="127" selection-start-line="69" selection-start-column="127" selection-end-line="69" selection-end-column="127" />
+        <state relative-caret-position="117">
+          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#520#537#0" expanded="true" />
-            <element signature="e#923#935#0" expanded="true" />
-            <element signature="e#1680#1689#0" expanded="true" />
+            <element signature="e#536#553#0" expanded="true" />
+            <element signature="e#939#951#0" expanded="true" />
+            <element signature="e#1696#1705#0" expanded="true" />
           </folding>
         </state>
       </provider>

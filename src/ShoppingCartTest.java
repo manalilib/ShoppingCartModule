@@ -12,7 +12,7 @@ import static groovy.util.GroovyTestCase.*;
  */
 public class ShoppingCartTest {
     @Test
-    public void loadMocks() throws Exception {
+    public void testShoppingCartScenarios() throws Exception {
         System.out.println("Running Shopping Cart Module Test..\n\n");
 //        @org.junit.runners.Parameterized.Parameters
         HashMap<String, Product> products = new HashMap<String, Product>();
@@ -54,17 +54,12 @@ public class ShoppingCartTest {
         promos.add(promo_med);
 
         Cart cart = new Cart(products,promos);
-//        validatePromoSmall(cart);
-//       @Test
         testPromoSmallScenario(cart);
 
+    }
 
-    }
-//@Test
-    public void  validatePromoSmall(Cart cart){
-        System.out.println("Running validatePromoSmall test..\n\n ");
-        testPromoSmallScenario(cart);
-    }
+    //Promo scenario methods
+
     //1st scenario: expected Price: $94.70, 3 x Unlimited 1 GB, 1 x Unlimited 5 GB
     public void testPromoSmallScenario(Cart cart){
         System.out.println("Running validatePromoSmall test..\nexpected Price: $94.70, 3 x Unlimited 1 GB, 1 x Unlimited 5 GB\n ");
@@ -74,7 +69,6 @@ public class ShoppingCartTest {
             cart.add("ult_large");
             double total = cart.total();
             String roundedTotal = String.format("%.2f",total);
-/* BigDecimal totalPriceRounded = new BigDecimal() */
         System.out.println("Discounted Price: $" + roundedTotal);
             assertEquals("94.70",roundedTotal);
     }
