@@ -1,3 +1,8 @@
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import static groovy.util.GroovyTestCase.*;
@@ -6,9 +11,10 @@ import static groovy.util.GroovyTestCase.*;
  * Created by manalilib on 1/16/17.
  */
 public class ShoppingCartTest {
-    public void main() throws Exception {
+    @Test
+    public void loadMocks() throws Exception {
         System.out.println("Running Shopping Cart Module Test..\n\n");
-        @org.junit.runners.Parameterized.Parameters
+//        @org.junit.runners.Parameterized.Parameters
         HashMap<String, Product> products = new HashMap<String, Product>();
         products.put("ult_small", new Product("ult_small", "Unlimited 1GB", 24.90));
         products.put("ult_medium", new Product("ult_medium", "Unlimited 2GB", 29.90));
@@ -47,18 +53,29 @@ public class ShoppingCartTest {
                 true);
         promos.add(promo_med);
 
+        Cart cart = new Cart(products,promos);
+//        validatePromoSmall(cart);
+//       @Test
+        testPromoSmallScenario(cart);
 
-        Cart cart = new Cart(products, promos);
 
-        //1st scenario: $94.70, 3 x Unlimited 1 GB, 1 x Unlimited 5 GB
-        @org.junit.Test
-        public void testPromoSmallScenario{
+    }
+//@Test
+    public void  validatePromoSmall(Cart cart){
+        System.out.println("Running validatePromoSmall test..\n\n ");
+        testPromoSmallScenario(cart);
+    }
+    //1st scenario: expected Price: $94.70, 3 x Unlimited 1 GB, 1 x Unlimited 5 GB
+    public void testPromoSmallScenario(Cart cart){
+        System.out.println("Running validatePromoSmall test..\nexpected Price: $94.70, 3 x Unlimited 1 GB, 1 x Unlimited 5 GB\n ");
             cart.add("ult_small");
             cart.add("ult_small");
             cart.add("ult_small");
             cart.add("ult_large");
             double total = cart.total();
-            assertEquals("total Price check: " + 94.70, total );
-        }
+            String roundedTotal = String.format("%.2f",total);
+/* BigDecimal totalPriceRounded = new BigDecimal() */
+        System.out.println("Discounted Price: $" + roundedTotal);
+            assertEquals("94.70",roundedTotal);
     }
 }
