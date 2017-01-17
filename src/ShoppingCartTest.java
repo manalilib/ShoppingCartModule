@@ -110,6 +110,7 @@ public class ShoppingCartTest {
         System.out.println("Items:");
         printPoducts(cart,"ult_small",3);
         printPoducts(cart,"ult_large",1);
+        printFreebies(cart);
 
             String roundedTotal = String.format("%.2f",total);
             expectedPrice = "94.70";
@@ -131,6 +132,7 @@ public class ShoppingCartTest {
         System.out.println("Items:");
         printPoducts(cart,"ult_small",2);
         printPoducts(cart,"ult_large",4);
+        printFreebies(cart);
 
         String roundedTotal = String.format("%.2f",total);
         expectedPrice = "209.40";
@@ -149,6 +151,7 @@ public class ShoppingCartTest {
         System.out.println("Items:");
         printPoducts(cart,"ult_small",1);
         printPoducts(cart,"ult_medium",2);
+        printFreebies(cart);
 
         String roundedTotal = String.format("%.2f",total);
         expectedPrice = "84.70";
@@ -167,7 +170,7 @@ public class ShoppingCartTest {
         System.out.println("Items:");
         printPoducts(cart,"ult_small",1);
         printPoducts(cart,"1gb",1);
-
+        printFreebies(cart);
         String roundedTotal = String.format("%.2f",total);
         expectedPrice = "31.32";
         System.out.println("Discounted Price: $" + roundedTotal);
@@ -183,5 +186,9 @@ public class ShoppingCartTest {
         System.out.println(itemCount + " " + itemName);
         //validate products in cart
         assertEquals(count,itemCount);
+    }
+
+    public void printFreebies(Cart cart){
+        cart.freebies.forEach(freebie -> System.out.print(freebie.code +"(FREE)\n"));
     }
 }

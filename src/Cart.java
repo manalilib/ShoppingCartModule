@@ -40,7 +40,7 @@ public class Cart {
         if (freebies == null) validatePromo();
 
         double total = addedProducts.stream().mapToDouble(product -> product.price).sum();
-        System.out.println("Price: " + total);
+        System.out.println("Regular Price: " + total);
         double totalResult = total - discount;
         if (this.isPromoCode) {
             discount = .10;
