@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -11,9 +12,9 @@ import static groovy.util.GroovyTestCase.*;
  * Created by manalilib on 1/16/17.
  */
 public class ShoppingCartTest {
-    @Test
-    public void testShoppingCartScenarios() throws Exception {
-        System.out.println("Running Shopping Cart Module Test..\n\n");
+//    @Before
+    public void loadMocks(int scenario) throws Exception {
+        System.out.println("Running Shopping Cart Module Test..");
 //        @org.junit.runners.Parameterized.Parameters
         HashMap<String, Product> products = new HashMap<String, Product>();
         products.put("ult_small", new Product("ult_small", "Unlimited 1GB", 24.90));
@@ -54,22 +55,58 @@ public class ShoppingCartTest {
         promos.add(promo_med);
 
         Cart cart = new Cart(products,promos);
-        testPromoSmallScenario(cart);
+        switch (scenario){
+            case 1:testPromoSmallScenario(cart);
+                break;
+            case 2:
+                testPromoLargeScenario(cart);
+                break;
+            default:
+                System.out.println("Invalid");
+
+        }
 
     }
 
-    //Promo scenario methods
+    @Test
+    public void testScenarioSmall() throws Exception {
+        loadMocks(1);
+    }
 
+    @Test
+    public void testScenarioLarge() throws Exception {
+        loadMocks(2);
+    }
+
+    //Promo scenario methods
     //1st scenario: expected Price: $94.70, 3 x Unlimited 1 GB, 1 x Unlimited 5 GB
     public void testPromoSmallScenario(Cart cart){
         System.out.println("Running validatePromoSmall test..\nexpected Price: $94.70, 3 x Unlimited 1 GB, 1 x Unlimited 5 GB\n ");
+
             cart.add("ult_small");
             cart.add("ult_small");
             cart.add("ult_small");
             cart.add("ult_large");
             double total = cart.total();
             String roundedTotal = String.format("%.2f",total);
+            String expectedPrice = "94.70";
         System.out.println("Discounted Price: $" + roundedTotal);
-            assertEquals("94.70",roundedTotal);
+            assertEquals(expectedPrice,roundedTotal);
+    }
+
+    //2nd scenario: expected Price: $209.40, 2 x Unlimited 1 GB + 4 x Unlimited 5 GB
+    public void testPromoLargeScenario(Cart cart){
+        System.out.println("Running testPromoLargeScenario test..\nexpected Price: $209.40, 2 x Unlimited 1 GB + 4 x Unlimited 5 GB\n ");
+        cart.add("ult_small");
+        cart.add("ult_small");
+        cart.add("ult_large");
+        cart.add("ult_large");
+        cart.add("ult_large");
+        cart.add("ult_large");
+        double total = cart.total();
+        String roundedTotal = String.format("%.2f",total);
+        String expectedPrice = "209.40";
+        System.out.println("Discounted Price: $" + roundedTotal);
+        assertEquals(expectedPrice,roundedTotal);
     }
 }
