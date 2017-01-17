@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dddf47ca-e089-4f1f-98a9-97b74ad7c019" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/EngineeringTest/ShoppingCartTest.class" afterPath="$PROJECT_DIR$/out/production/EngineeringTest/ShoppingCartTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShoppingCartTest.java" afterPath="$PROJECT_DIR$/src/ShoppingCartTest.java" />
     </list>
     <ignored path="EngineeringTest.iws" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="ShoppingCart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ShoppingCart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="80" column="42" selection-start-line="79" selection-start-column="11" selection-end-line="80" selection-end-column="42" />
+            <state relative-caret-position="246">
+              <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#186#203#0" expanded="true" />
@@ -37,16 +39,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Cart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ShoppingCartTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ShoppingCartTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+            <state relative-caret-position="279">
+              <caret line="186" column="1" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#484#501#0" expanded="true" />
-                <element signature="e#887#899#0" expanded="true" />
-                <element signature="e#1644#1653#0" expanded="true" />
+                <element signature="e#575#592#0" expanded="true" />
+                <element signature="e#978#990#0" expanded="true" />
+                <element signature="e#1735#1744#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -566,34 +581,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 09h 19m 19s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 11h 40m 58s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 09h 29m 39s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 11h 46m 49s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 09h 38m 14s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 11h 52m 44s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 09h 38m 49s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 12h 03m 56s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 10h 10m 08s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 12h 04m 39s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 10h 19m 33s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 12h 13m 12s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 10h 24m 32s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 12h 13m 59s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 10h 25m 20s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 12h 14m 54s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 10h 27m 07s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 12h 16m 10s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ShoppingCartTest - 2017.01.17 at 10h 27m 45s.xml">
+    <history-entry file="ShoppingCartTest - 2017.01.17 at 12h 18m 09s.xml">
       <configuration name="ShoppingCartTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -898,14 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_111/src.zip!/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -924,8 +931,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Cart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -933,10 +940,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ShoppingCart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="80" column="42" selection-start-line="79" selection-start-column="11" selection-end-line="80" selection-end-column="42" />
+        <state relative-caret-position="246">
+          <caret line="79" column="23" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#186#203#0" expanded="true" />
@@ -947,13 +962,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ShoppingCartTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        <state relative-caret-position="279">
+          <caret line="186" column="1" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#484#501#0" expanded="true" />
-            <element signature="e#887#899#0" expanded="true" />
-            <element signature="e#1644#1653#0" expanded="true" />
+            <element signature="e#575#592#0" expanded="true" />
+            <element signature="e#978#990#0" expanded="true" />
+            <element signature="e#1735#1744#0" expanded="true" />
           </folding>
         </state>
       </provider>
